@@ -1,0 +1,296 @@
+{
+  "title": {
+    "login_page": "Login ",
+    "update_profile": "Update Profile",
+    "category_page": "Categories",
+    "update_category": "Update Category",
+    "create_category": "Create Category",
+    "customers_page": "Customers",
+    "update_customer": "Update Customer",
+    "create_customer": "Create Customer",
+    "products_page": "Products",
+    "update_product": "Update Product",
+    "create_product": "Create Product",
+    "tax_page": "Taxes",
+    "update_tax": "Update Tax",
+    "create_tax": "Create Tax",
+    "users_page": "Users",
+    "update_user": "Update User",
+    "create_user": "Create User",
+    "create_new_user": "Create New",
+    "create_invoice": "Create New Invoice",
+    "invoice_page": "Invoices",
+    "update_invoice": "Update Invoice",
+    "new_ex_product": "New Product",
+    "update_ex_product": "Update Product",
+    "manage_products_page": "Manage Product",
+    "store_details": "Store Details"
+  },
+  "menu": {
+    "create_invoice": "Invoice",
+    "add_product": "Product",
+    "home": "Dashboard",
+    "update_profile": "Update Profile"
+  },
+  "content": {
+    "setting": "Settings",
+    "support": "Support"
+  },
+  "btn": {
+    "login": "Log in",
+    "reload_data": "Try Again",
+    "update_profile": "Update",
+    "update_category": "Update",
+    "create_new_category": "Create New",
+    "create_new_cat": "Create",
+    "create_new_customer": "Create New",
+    "create_new_cus": "Create",
+    "update_customer": "Update",
+    "update_product": "Update",
+    "create_new_product": "Create New",
+    "create_new_pro": "Create",
+    "create_new_tax": "Create New",
+    "update_tax": "Update Tax",
+    "create_new_tx": "Create",
+    "update_user": "Update",
+    "create_new_usr": "Create",
+    "create_new_user": "Create New",
+    "exist_user": "Exist User",
+    "new_user": "New User",
+    "temp_user": "Temporary User",
+    "ok": "Ok",
+    "cancel": "Cancel",
+    "select": "Select",
+    "delete":"Delete",
+    "add_product":"Add Product",
+    "publish_invoice":"Publish",
+    "create_new_invoice": "Create New",
+    "payment_type": "Payment Type",
+    "inv_status":"Invoice Status",
+    "increase": "Increase",
+    "decrease": "Decrease",
+    "update_store": "Update"
+  },
+  "title_page": {
+    "login": "Login To Kogaizirek"
+  },
+  "header": {
+    "change_password": "Change Password",
+    "add_items": "append items to list",
+    "add_category": "Create new category",
+    "add_tax": "Create new tax",
+    "change_payment": "Change Payment Type",
+    "change_status": "Change Status",
+    "manage_product_quantity":"Manage Product Quantity",
+    "logs":"Logs"
+  },
+  "error": {
+    "connection": "Connection Error! try again",
+    "login_incorrect": "Username Or Password  Incorrect",
+    "password_changed": "Your earlier password is incorrect"
+  },
+  "input_labels": {
+    "old_password": "Old Password",
+    "new_password": "New Password",
+    "confirm_password": "Confirm Password"
+  },
+  "input_errors": {
+    "min_char": "Password must be minimum 6 characters.",
+    "match_passwords": "The two passwords that you entered do not match!",
+    "confirm_password": "Confirm Password"
+  },
+  "user": {
+    "name": "First name",
+    "family": "Last name",
+    "mobile": "Mobile",
+    "company_title": "Company Name",
+    "email": "Email",
+    "password": "Password",
+    "avatar": "Avatar"
+  },
+  "customer": {
+    "name": "First name",
+    "family": "Last name",
+    "mobile": "Mobile",
+    "phone": "Phone",
+    "address": "Address",
+    "postal_code": "Postal Code"
+  },
+  "product": {
+    "title": "Title",
+    "Image": "Image",
+    "description": "Description",
+    "price": "Price",
+    "discount": "Discount",
+    "tax_id": "Tax",
+    "currency_id": "Currency",
+    "quantity": "Quantity",
+    "cat_id": "Category",
+    "barcode": "Barcode",
+    "sku": "SKU",
+    "qty": "Qty",
+    "total": "Total"
+  },
+  "category": {
+    "category_name": "Category name"
+  },
+  "invoice": {
+    "add_customer_invoice": "Add customer to invoice",
+    "customer_name":"Customer Name",
+    "mobile": "Mobile",
+    "delete": "Delete",
+    "No customer is selected": "No customer is selected",
+    "search_customer": "Search Customer ...",
+    "create_new_customer": "Create New Customer",
+    "create_temp_customer": "Create Temporary Customer",
+    "add_product": "Add product to invoice",
+    "search_product": "Search Product",
+    "invoice_total":"Invoice Total",
+    "total_discount": "Discount",
+    "total_is_paid": "is Paid?",
+    "total_paid":"Paid",
+    "total_not_paid":"Not Paid",
+    "total_price": "Total Price",
+    "const": "Const",
+    "payment_type": "Payment Type",
+    "order_date": "Order Date",
+    "description_text":"Descriptions of invoice ...",
+    "description":"Description",
+    "status": "Status",
+    "invoice": "Invoice",
+    "inv_no": "Invoice No",
+    "product_name":"Product Name",
+    "price": "Price",
+    "qty": "Qty",
+    "total": "Total",
+    "inv_discount": "Invoice Discount",
+    "download": "Download",
+    "print": "Print",
+    "discount": "Discount",
+    "seller": "Seller",
+    "buyer": "Buyer",
+    "postal_code": "Postal Code",
+    "address":"Address"
+
+  },
+  "tax": {
+    "tax_name": "Tax Name",
+    "tax": "Tax",
+    "active": "Active"
+  },
+  "msg": {
+    "profile_success_update": "Your profile has been successfully updated",
+    "password_changed": "Your password has been successfully changed",
+    "category_success_update": "Your category has been successfully updated",
+    "category_success_created": "Your category has been successfully created",
+    "customer_success_update": "Your customer has been successfully updated",
+    "user_success_created": "User has been successfully created",
+    "customer_success_created": "Customer has been successfully created",
+    "product_deleted": "Product Deleted",
+    "product_success_update": "Your product has been successfully updated",
+    "product_success_created": "Product has been successfully created",
+    "uploaded_success": "Uploaded Successfully",
+    "tax_success_created": "Tax has been successfully created",
+    "tax_success_update": "Your tax has been successfully updated",
+    "user_success_update": "User has been successfully updated",
+    "max_quantity_reach": "Maximum quantity of this product is reached!",
+    "customer_product_empty":"Customer or Products Fields Empty",
+    "invoice_published":"Invoice Published Successfully",
+    "invoice_success_update": "Invoice Updated Successfully",
+    "invoice_success_created": "Invoice Created Successfully",
+    "file_success_uploaded": "Uploaded Successfully",
+    "lang_changed": "Language Changed",
+    "reach_quantity": "Changing value must be less than quantity",
+    "check_input_value": "Please Check Quantity Field",
+    "logged_in": "You are login successfully"
+
+
+
+  },
+  "tableBuilderMeta": {
+    "title": "Title",
+    "sku": "SKU",
+    "price": "Price",
+    "quantity": "Quantity",
+    "name": "First Name",
+    "family": "Last Name",
+    "mobile": "Mobile",
+    "invoiceid": "Invoice No.",
+    "customer_name": "Cutomer",
+    "customer_mobile": "Mobile",
+    "total_price": "Total Price",
+    "status": "Status"
+  },
+  "searchMeta": {
+    "title": "Title",
+    "sku": "SKU",
+    "name": "First Name",
+    "family": "Last Name",
+    "mobile": "Mobile",
+    "tax": "Tax",
+    "company_title": "Company",
+    "email": "Email",
+    "invoiceid": "Invoice No.",
+    "customer": "Customer"
+  },
+  "sortingMeta": {
+    "title": "Title",
+    "price": "Price",
+    "quantity": "Quantity",
+    "name": "First Name",
+    "family": "Last Name",
+    "tax": "Tax",
+    "created_at": "Created at",
+    "company_title": "Company",
+    "invoiceid": "Invoice No.",
+    "customer": "Custosmer"
+  },
+  "logs": {
+    "num_in_stock": "Number In Stock",
+    "changed_qty":"Changed Quantity",
+    "created_at": "Date"
+  },
+  "store": {
+    "title": "Store Name",
+    "phone": "Phone",
+    "address": "Address",
+    "registration": "Registration Number",
+    "upload_logo": "Logo"
+  },
+  "popConfirm": {
+    "delete_confirm": "Are you sure to delete?",
+    "okText": "Yes",
+    "cancelText": "No"
+  },
+  "tooltip": {
+    "delete": "Delete",
+    "edit": "Edit"
+  },
+  "tableMeta": {
+    "id": "Id",
+    "num": "No.",
+    "actions": "Actions",
+    "title": "Title",
+    "name": "First Name",
+    "family": "Last Name",
+    "mobile": "Mobile",
+    "tax": "Tax",
+    "active": "Active",
+    "created_at": "Created at",
+    "updated_at": "Updated at"
+  },
+  "upload": {
+    "upload_image": "Upload Image",
+    "upload_avatar": "Upload Avatar"
+  },
+  "symbol": {
+    "currency":"$"
+  },
+  "sign_in": "Sign in",
+  "sign_in_text": "get started with our service",
+  "dont_have_account": "Don't have an account yet?",
+  "create_account": "Create one now!",
+  "change-locale": "Change locale",
+  "search_placeholder": "Type here to search ...",
+  "sort_by": "Sort By"
+}
