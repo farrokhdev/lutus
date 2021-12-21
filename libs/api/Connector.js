@@ -25,6 +25,7 @@ export function routerList() {
       //Language//
       LanguageList: new Resource('language/languages'),
       PricesLanguageList: new Resource('prices/languages'),
+      PriceCalculator: new Resource('prices/calculator'),
       //Language//
 
       //Field//

@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import Layout from '../../../libs/components/UI/Layout'
+import Layout from '../../libs/components/UI/Layout'
 import { Table, Radio, Affix } from 'antd'
 import { observer } from 'mobx-react'
-import StateView from '../../../libs/components/UI/StateView/StateView'
-import OrderBox from '../../../libs/components/Home/OrderBox'
+import StateView from 'libs/components/UI/StateView/StateView'
+import OrderBox from '../../libs/components/Home/OrderBox'
 import Head from 'next/head'
-import MyTable from '../../../libs/components/MyTable/MyTable'
-import Translate from '../../../libs/components/Prices/Translate'
-import Video from '../../../libs/components/Prices/Video'
-import Attendance from '../../../libs/components/Prices/Attendance'
-import TestTable from '../../../libs/components/Prices/TestTable'
-import LanguagePres from '../../../libs/mobx/presenters/LanguagePres'
+import LanguagePres from '../../libs/mobx/presenters/LanguagePres'
+import PriceTable from 'libs/components/Tables/PriceTable/PriceTable'
 
 const controller = new LanguagePres()
 
@@ -21,11 +17,41 @@ const Index = observer(() => {
     controller.getPricesLanguageList()
   }, [])
 
-  const { priceslanguageList } = controller
-
   const _testTable = () => {
-    console.log(priceslanguageList)
-    return <TestTable priceslanguageList={priceslanguageList} />
+    return (
+      <div className="d-flex flex-column justify-content-center h-100">
+        <div className="">
+          <h4>تعرفه ترجمه و متون</h4>
+        </div>
+        <div className="my-5">
+          <h6>قیمت ترجمه در پروژه های مناقصه ای</h6>
+          <span>
+            چنانچه پروژه خود را به صورت مناقصه ای تعریف کرده باشید، تمام مترجمین
+            واجد شرایط می توانند وارد منقاصه شده و هر کدام قیمت ترجمه را به صورت
+            جداگانه اعلام می کنند. این نکته را مد نظر داشته باشید که قیمت
+            پیشنهادی هر مترجم بین بازه ای خواهد بود که در زیر مشخص شده است. شما
+            می توانید با توجه به رزومه مترجم، هزینه ترجمه اعلام شده و امتیاز وی
+            در ترنسیس، یکی از مترجمان که از نظرتان بهترین و مناسب ترین مترجم است
+            را انتخاب کنید. در این بین هزینه ترجمه که توسط مترجم اعلام می شود
+            نقشی اساسی ایفا می کند.
+          </span>
+        </div>
+        <div className="my-5">
+          <h6>قیمت ترجمه در پروژه های غیر مناقصه ای</h6>
+          <span>
+            اگر شما پروژه خود را به صورت غیرمناقصه ای تعریف کنید تنها مترجم ویژه
+            ترنسیس (که در واقع گلچینی از بهترین مترجم های ترنسیس هستند) امکان
+            قیمت گذاری و اعلام هزینه ترجمه بر روی پروژه را خواهد داشت و قیمتی که
+            مترجم ویژه ترنسیس اعلام خواهد کرد سقف بازه مشخص شده در باکس زیر
+            خواهد بود. پروژه های غیر مناقصه ای گارانتی بالاتری نسبت به پروژه های
+            مناقصه ای دارند چرا که مسئولیت کامل ترجمه برعهده ترنسیس خواهد بود.
+          </span>
+        </div>
+        <StateView state={controller.stateView}>
+          <PriceTable controller={controller} />
+        </StateView>
+      </div>
+    )
   }
 
   return (

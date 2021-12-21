@@ -24,7 +24,7 @@ import '../public/static/css/globals.css'
 import initializeStore from '../libs/mobx/presenters/CoreStore'
 
 // my styles
-import '../styles/myTable.css'
+// import '../styles/table.css'
 
 Router.events.on('routeChangeStart', (url) => {
   // console.log(`Loading: ${url}`)

@@ -8,7 +8,7 @@ const LoadingIcon = (
   <LoadingOutlined style={{ fontSize: 50, marginBottom: 20 }} spin />
 )
 
-export default class StateView extends Component {
+export default class PriceStateView extends Component {
   static get State() {
     return {
       loading: '0',
@@ -46,9 +46,7 @@ export default class StateView extends Component {
       )
     } else {
       return (
-        <Row
-        // className={"height-high"}
-        >
+        <Row className={'height-high'}>
           <Col span={24} className={'d-flex justify-content-center my-auto '}>
             <Card className={'text-center p-5 card-loading'} bordered={false}>
               <Spin indicator={LoadingIcon} tip="در حال بارگذاری ..."></Spin>
