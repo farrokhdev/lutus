@@ -30,15 +30,18 @@ export default class LanguagePres {
   other_languages = []
   services = []
   text_services = []
+  subtitle = []
 
   priceForWord = []
+  priceForOral = []
+  priceForVideo = []
 
   // @observable languageList = new handleOrderModel()
 
   //get Language List//
   onErrorGetLanguageList = (err) => {
     console.log(err)
-    this.stateView = StateView.State.error
+    // this.stateView = StateView.State.error
   }
   onSuccessGetLanguageList = (res) => {
     const list = []
@@ -65,7 +68,7 @@ export default class LanguagePres {
   //get prices Language List//
   onErrorPricesLangList = (err) => {
     console.log(err)
-    this.stateView = StateView.State.error
+    // this.stateView = StateView.State.error
   }
   onSuccessPricesLangList = (res) => {
     this.fields = res.data.fields
@@ -73,6 +76,7 @@ export default class LanguagePres {
     this.other_languages = res.data.other_languages
     this.services = res.data.services
     this.text_services = res.data.text_services
+    this.subtitle = res.data.subtitle
 
     this.stateView = StateView.State.content
   }
@@ -85,22 +89,25 @@ export default class LanguagePres {
       this.onErrorPricesLangList,
     )
   }
-  //get prices Language List//
+  //send prices translate List//
   onErrorPriceCalculator = (err) => {
     this.loading = false
     console.log(err)
-    this.priceStateView = StateView.State.error
+    // this.priceStateView = StateView.State.error
   }
   onSuccessPriceCalculator = (res) => {
     this.loading = false
     const list = []
+    console.log(res.data.values)
+
     res.data.values.map((item) => {
       list.push(item)
     })
     this.priceForWord = list
+
     this.priceStateView = StateView.State.content
   }
-  getPriceCalculatort = (data = {}, route = 'PriceCalculator') => {
+  sendPriceCalculatort = (data = {}, route = 'PriceCalculator') => {
     this.loading = true
     this.priceStateView = StateView.State.loading
     DataService.sendData(
@@ -110,5 +117,61 @@ export default class LanguagePres {
       this.onErrorPriceCalculator,
     )
   }
-  //get Language List//
+  //send price translate List//
+  //send oral translate List//
+  onErrorPriceOral = (err) => {
+    this.loading = false
+    // this.priceStateView = StateView.State.error
+  }
+  onSuccessPriceOral = (res) => {
+    this.loading = false
+    const list = []
+    console.log(res.data.values)
+
+    res.data.values.map((item) => {
+      list.push(item)
+    })
+    this.priceForOral = list
+
+    this.priceStateView = StateView.State.content
+  }
+  sendPriceOral = (data = {}, route = 'PriceOral') => {
+    this.loading = true
+    this.priceStateView = StateView.State.loading
+    DataService.sendData(
+      data,
+      route,
+      this.onSuccessPriceOral,
+      this.onErrorPriceOral,
+    )
+  }
+  //send oral translate List//
+  //send video translate List//
+  onErrorPriceVideo = (err) => {
+    this.loading = false
+    // this.priceStateView = StateView.State.error
+  }
+  onSuccessPriceVideo = (res) => {
+    this.loading = false
+    const list = []
+    console.log(res.data.values)
+
+    res.data.values.map((item) => {
+      list.push(item)
+    })
+    this.priceForVideo = list
+
+    this.priceStateView = StateView.State.content
+  }
+  sendPriceVideo = (data = {}, route = 'PriceVideo') => {
+    this.loading = true
+    this.priceStateView = StateView.State.loading
+    DataService.sendData(
+      data,
+      route,
+      this.onSuccessPriceVideo,
+      this.onErrorPriceVideo,
+    )
+  }
+  //send video translate List//
 }

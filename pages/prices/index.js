@@ -5,9 +5,8 @@ import { observer } from 'mobx-react'
 import StateView from '../../libs/components/UI/StateView/StateView'
 import OrderBox from '../../libs/components/Home/OrderBox'
 import Head from 'next/head'
-import MyTable from '../../libs/components/Tables/PriceTable/PriceTable'
 import Translate from '../../libs/components/Prices/Translate'
-import Video from '../../libs/components/Prices/Video'
+import Video from '../../libs/components/Prices/VideoTranslate'
 import Attendance from '../../libs/components/Prices/Attendance'
 
 @observer
@@ -16,11 +15,6 @@ class Index extends Component {
     value: '',
   }
 
-  _testTable = () => {
-    return <MyTable />
-
-    return <Translate />
-  }
   _renderText = () => {
     return <Translate />
   }

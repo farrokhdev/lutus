@@ -2,50 +2,58 @@ import { useState, useEffect } from 'react'
 import { observer } from 'mobx-react'
 import { Input, Select, Form, Button, Slider } from 'antd'
 import StateView from 'libs/components/UI/StateView/StateView'
+import Router from 'next/router'
+import CurrencyFormat from 'react-currency-format'
 
 import style from '../../../../styles/table.css'
 import { ShrinkOutlined } from '@ant-design/icons'
 
 const { Option } = Select
 
-const PriceTable = observer(({ controller }) => {
+const TranslateTable = observer(({ controller }) => {
   function handleChange(value) {
     console.log(`selected ${value}`)
   }
 
   useEffect(() => {
-    controller.getPriceCalculatort({
+    controller.sendPriceCalculatort({
       service_id: 1,
       field_id: 2,
       from_to: '3-6',
       number_count: '9000',
     })
   }, [])
-  const [formVals, setFormVals] = useState([])
+
+  const handleRoute = () => {
+    Router.push('./select')
+  }
+
   // FORM FUNCTIONS
   const onFinish = (values) => {
     console.log(values)
-    controller.getPriceCalculatort(values)
+    controller.sendPriceCalculatort(values)
   }
 
   const onReset = () => {
     form.resetFields()
   }
 
-  const onValuesChange = (value) => {
-    setFormVals([...formVals, value])
-    onFinish(formVals)
-    // form.setFieldsValue({
-    //   note: 'Hello world!',
-    //   gender: 'male',
-    // });
+  const values = controller.priceForWord
+
+  const onValuesChange = (value, val2) => {
+    onFinish({
+      field_id: val2.field_id || controller.fields[0].id,
+      from_to: val2.from_to || controller.languages[0].from_to,
+      number_count: val2.number_count || '9000',
+      service_id: val2.service_id || controller.services[0].id,
+    })
   }
 
   const onChange = (values) => {
     onFinish()
   }
 
-  console.log(formVals)
+  console.log(controller.priceForWord)
 
   return (
     <div className={style.table_sec}>
@@ -116,7 +124,7 @@ const PriceTable = observer(({ controller }) => {
             </Form.Item>
             <Form.Item
               name="field_id"
-              // label="زمینه"
+              //  label="زمینه"
             >
               <Select
                 defaultValue="زمینه"
@@ -141,18 +149,6 @@ const PriceTable = observer(({ controller }) => {
             >
               <Input defaultValue={'9000'} />
             </Form.Item>
-            <Form.Item>
-              <Button
-                className={style.filter_btn}
-                loading={controller.loading}
-                type="primary"
-                htmlType="submit"
-                block
-                icon={<ShrinkOutlined />}
-              >
-                اعمال فیلتر
-              </Button>
-            </Form.Item>
           </Form>
         </div>
         <div className={style.content_column}>
@@ -163,23 +159,22 @@ const PriceTable = observer(({ controller }) => {
           </div>
           <StateView state={controller.priceStateView}>
             <div className={style.content_dynamic_row}>
-              {controller.priceForWord.length > 0 ? (
-                controller.priceForWord.map((item, indx) => {
-                  return (
-                    <div key={indx} className={style.content_dynamic_item}>
+              {controller.priceForWord.map((item) => {
+                console.log(item.data.system.price_from)
+                return (
+                  <>
+                    <div className={style.content_dynamic_item}>
                       <div className={style.item}>
                         <span>سیستمی</span>
                         <div className={style.price_range}>
                           <span>
-                            {item.data.system.price_from
-                              ? item.data.system.price_from
-                              : '_'}
-                          </span>
-                          <span>تا</span>
-                          <span>
-                            {item.data.system.price_to
-                              ? item.data.system.price_to
-                              : '_'}
+                            <CurrencyFormat
+                              value={item.data.system.price_from || '_'}
+                              displayType={'text'}
+                              thousandSeparator={true}
+                              suffix={' ' + 'تومان'}
+                              renderText={(value) => <div>{value}</div>}
+                            />
                           </span>
                         </div>
                       </div>
@@ -187,24 +182,29 @@ const PriceTable = observer(({ controller }) => {
                         <span>فریلنسری</span>
                         <div className={style.price_range}>
                           <span>
-                            {item.data.freelancer.price_from
-                              ? item.data.freelancer.price_from
-                              : '_'}
+                            <CurrencyFormat
+                              value={item.data.freelancer.price_from || '_'}
+                              displayType={'text'}
+                              thousandSeparator={true}
+                              renderText={(value) => <div>{value}</div>}
+                            />
                           </span>
-                          <span>تا</span>
+                          <span>_</span>
                           <span>
-                            {item.data.freelancer.price_to
-                              ? item.data.freelancer.price_to
-                              : '_'}
+                            <CurrencyFormat
+                              value={item.data.freelancer.price_to || '_'}
+                              displayType={'text'}
+                              thousandSeparator={true}
+                              renderText={(value) => <div>{value}</div>}
+                            />
                           </span>
+                          <span>تومان</span>
                         </div>
                       </div>
                     </div>
-                  )
-                })
-              ) : (
-                <div className={style.nodata}>هیچ دیتایی یافت نشد</div>
-              )}
+                  </>
+                )
+              })}
             </div>
           </StateView>
           <div className={style.content_row}>
@@ -343,7 +343,11 @@ const PriceTable = observer(({ controller }) => {
           </div>
           <div className={style.content_row}>
             <div className={style.content_item}>
-              <Button loading={controller.loading} type="primary">
+              <Button
+                onClick={handleRoute}
+                loading={controller.loading}
+                type="primary"
+              >
                 ثبت سفارش
               </Button>
             </div>
@@ -364,4 +368,4 @@ const PriceTable = observer(({ controller }) => {
   )
 })
 
-export default PriceTable
+export default TranslateTable
