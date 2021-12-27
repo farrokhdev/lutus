@@ -149,7 +149,7 @@ export default class LanguagePres {
   //send video translate List//
   onErrorPriceVideo = (err) => {
     this.loading = false
-    // this.priceStateView = StateView.State.error
+    this.priceStateView = StateView.State.error
   }
   onSuccessPriceVideo = (res) => {
     this.loading = false
