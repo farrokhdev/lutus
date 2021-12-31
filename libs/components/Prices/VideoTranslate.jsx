@@ -1,9 +1,10 @@
-import { Table } from 'antd'
-import React, { Component } from 'react'
+import { Table } from "antd";
+import React, { Component } from "react";
 
-import StateView from '../UI/StateView/StateView'
-import { observer } from 'mobx-react'
-import VideoTranslateTable from '../Tables/VideoTranslateTable/VideoTranslateTable'
+import StateView from "../UI/StateView/StateView";
+import { observer } from "mobx-react";
+import VideoTranslateTable from "../Tables/VideoTranslateTable/VideoTranslateTable";
+import NewVideoTranslateTable from "../TestTable/VideoTranslateTable/NewVideoTranslateTable";
 
 const VideoTranslate = observer(({ controller }) => {
   return (
@@ -36,10 +37,10 @@ const VideoTranslate = observer(({ controller }) => {
         </span>
       </div>
       <StateView state={controller.stateView}>
-        <VideoTranslateTable controller={controller} />
+        <NewVideoTranslateTable controller={controller} />
       </StateView>
     </div>
-  )
-})
+  );
+});
 
-export default VideoTranslate
+export default VideoTranslate;

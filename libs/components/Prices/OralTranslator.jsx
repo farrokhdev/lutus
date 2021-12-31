@@ -1,9 +1,10 @@
-import { Table } from 'antd'
-import React, { Component } from 'react'
+import { Table } from "antd";
+import React, { Component } from "react";
 
-import StateView from '../UI/StateView/StateView'
-import { observer } from 'mobx-react'
-import OralTranslateTable from '../Tables/OralTranslateTable/OralTranslateTable'
+import StateView from "../UI/StateView/StateView";
+import { observer } from "mobx-react";
+import OralTranslateTable from "../Tables/OralTranslateTable/OralTranslateTable";
+import NewOralTranslateTable from "../TestTable/OralTranslateTable/NewOralTranslateTable";
 
 const OralTranslate = observer(({ controller }) => {
   return (
@@ -36,10 +37,10 @@ const OralTranslate = observer(({ controller }) => {
         </span>
       </div>
       <StateView state={controller.stateView}>
-        <OralTranslateTable controller={controller} />
+        <NewOralTranslateTable controller={controller} />
       </StateView>
     </div>
-  )
-})
+  );
+});
 
-export default OralTranslate
+export default OralTranslate;

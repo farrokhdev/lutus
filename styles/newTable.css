@@ -1,0 +1,141 @@
+:root {
+  --primary: #d64773;
+  --primaryLight: rgba(214, 71, 115, 0.1);
+  --secondary: #3c6ad1;
+  --secondaryLight: #3c6ad11c;
+  --third: #5b626927;
+  --thirdLight: #e3de4036;
+  --white: #ffffff;
+  --black: #000;
+  --bodycolor: #f7f8f9;
+  --border: #ededed;
+  --paddingfilters: 20px 20px 40px 20px;
+  --padding20: 20px;
+  --padding10: 10px;
+  --padding10_0: 10px 0px;
+  --gap20: 20px;
+  --gap10: 10px;
+  --gap5: 5px;
+  --height: 100px;
+  --fontsize18px: 18px;
+  --fontsize16px: 16px;
+  --fontsize14px: 14px;
+  --dy-height: 220px;
+  --boxshadow: 0 0 20px rgba(80, 80, 80, 0.234);
+  --boxshadow2: 0 0 10px rgba(80, 80, 80, 0.115);
+  --radius: 4px;
+}
+
+.section {
+  width: 100%;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.filterBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--gap20);
+  padding: var(--padding20);
+  background-color: var(--white);
+  box-shadow: var(--boxshadow2);
+  align-items: center;
+  border-radius: var(--radius);
+}
+
+.filterBox .ant-form-item {
+  margin-bottom: 0 !important;
+}
+.filterBox .ant-form-item .item_label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* gap: var(--gap20); */
+}
+.table .t_row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--gap10);
+  overflow: hidden;
+  /* border-radius: var(--radius); */
+}
+.table .t_row .t_title {
+  padding: var(--padding10);
+  background-color: var(--primaryLight);
+  color: var(--primary);
+  font-weight: 400;
+  align-items: center;
+  display: flex;
+  /* text-align: center; */
+
+  font-size: var(--fontsize14px);
+}
+
+.table .t_row .t_items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--gap10);
+  text-align: center;
+  align-items: center;
+  padding: var(--padding10_0);
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fontsize14px);
+}
+.table .t_row .t_items .t_item img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.table .t_row .t_items .item_boxs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap10);
+  text-align: center;
+}
+.table .t_row .t_items .item_boxs .item_box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: var(--padding10);
+  background-color: var(--thirdLight);
+  color: var(--secondary);
+  border-radius: var(--radius);
+  /* box-shadow: var(--boxshadow2); */
+  font-weight: 400;
+  font-size: var(--fontsize14px);
+  min-height: 80px;
+  justify-content: space-between;
+}
+.table .t_row .t_items .item_box .t_dyn_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap5);
+}
+
+.item_null {
+  background-color: var(--thirdLight);
+  font-weight: 500;
+  padding: var(--padding10);
+}
+
+.t_items .ant-btn {
+  height: 45px !important;
+  background-color: transparent !important;
+  border: 1px solid var(--secondary) !important;
+  color: var(--secondary);
+}
+.t_items .ant-btn:hover {
+  background-color: var(--secondary) !important;
+  color: var(--white);
+}

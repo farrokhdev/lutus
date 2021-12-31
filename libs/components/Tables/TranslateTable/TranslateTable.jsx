@@ -1,59 +1,59 @@
-import { useState, useEffect } from 'react'
-import { observer } from 'mobx-react'
-import { Input, Select, Form, Button, Slider } from 'antd'
-import StateView from 'libs/components/UI/StateView/StateView'
-import Router from 'next/router'
-import CurrencyFormat from 'react-currency-format'
+import { useState, useEffect } from "react";
+import { observer } from "mobx-react";
+import { Input, Select, Form, Button, Slider } from "antd";
+import StateView from "libs/components/UI/StateView/StateView";
+import Router from "next/router";
+import CurrencyFormat from "react-currency-format";
 
-import style from '../../../../styles/table.css'
-import { ShrinkOutlined } from '@ant-design/icons'
+import style from "../../../../styles/table.css";
+import { ShrinkOutlined } from "@ant-design/icons";
 
-const { Option } = Select
+const { Option } = Select;
 
 const TranslateTable = observer(({ controller }) => {
   function handleChange(value) {
-    console.log(`selected ${value}`)
+    console.log(`selected ${value}`);
   }
 
   useEffect(() => {
     controller.sendPriceCalculatort({
       service_id: 1,
       field_id: 2,
-      from_to: '3-6',
-      number_count: '9000',
-    })
-  }, [])
+      from_to: "3-6",
+      number_count: "9000",
+    });
+  }, []);
 
   const handleRoute = () => {
-    Router.push('./select')
-  }
+    Router.push("./select");
+  };
 
   // FORM FUNCTIONS
   const onFinish = (values) => {
-    console.log(values)
-    controller.sendPriceCalculatort(values)
-  }
+    console.log(values);
+    controller.sendPriceCalculatort(values);
+  };
 
   const onReset = () => {
-    form.resetFields()
-  }
+    form.resetFields();
+  };
 
-  const values = controller.priceForWord
+  const values = controller.priceForWord;
 
   const onValuesChange = (value, val2) => {
     onFinish({
       field_id: val2.field_id || controller.fields[0].id,
       from_to: val2.from_to || controller.languages[0].from_to,
-      number_count: val2.number_count || '9000',
+      number_count: val2.number_count || "9000",
       service_id: val2.service_id || controller.services[0].id,
-    })
-  }
+    });
+  };
 
   const onChange = (values) => {
-    onFinish()
-  }
+    onFinish();
+  };
 
-  console.log(controller.priceForWord)
+  console.log(controller.priceForWord);
 
   return (
     <div className={style.table_sec}>
@@ -99,7 +99,7 @@ const TranslateTable = observer(({ controller }) => {
                     <Option key={indx} value={item.id}>
                       {item.title}
                     </Option>
-                  )
+                  );
                 })}
               </Select>
             </Form.Item>
@@ -118,7 +118,7 @@ const TranslateTable = observer(({ controller }) => {
                     <Option key={indx} value={item.from_to}>
                       {item.title}
                     </Option>
-                  )
+                  );
                 })}
               </Select>
             </Form.Item>
@@ -138,7 +138,7 @@ const TranslateTable = observer(({ controller }) => {
                     <Option key={indx} value={item.id}>
                       {item.title}
                     </Option>
-                  )
+                  );
                 })}
               </Select>
             </Form.Item>
@@ -147,7 +147,7 @@ const TranslateTable = observer(({ controller }) => {
               // label="تعداد"
               rules={[{ required: true }]}
             >
-              <Input defaultValue={'9000'} />
+              <Input defaultValue={"9000"} />
             </Form.Item>
           </Form>
         </div>
@@ -160,7 +160,7 @@ const TranslateTable = observer(({ controller }) => {
           <StateView state={controller.priceStateView}>
             <div className={style.content_dynamic_row}>
               {controller.priceForWord.map((item) => {
-                console.log(item.data.system.price_from)
+                console.log(item.data.system.price_from);
                 return (
                   <>
                     <div className={style.content_dynamic_item}>
@@ -169,10 +169,10 @@ const TranslateTable = observer(({ controller }) => {
                         <div className={style.price_range}>
                           <span>
                             <CurrencyFormat
-                              value={item.data.system.price_from || '_'}
-                              displayType={'text'}
+                              value={item.data.system.price_from || "_"}
+                              displayType={"text"}
                               thousandSeparator={true}
-                              suffix={' ' + 'تومان'}
+                              suffix={" " + "تومان"}
                               renderText={(value) => <div>{value}</div>}
                             />
                           </span>
@@ -183,8 +183,8 @@ const TranslateTable = observer(({ controller }) => {
                         <div className={style.price_range}>
                           <span>
                             <CurrencyFormat
-                              value={item.data.freelancer.price_from || '_'}
-                              displayType={'text'}
+                              value={item.data.freelancer.price_from || "_"}
+                              displayType={"text"}
                               thousandSeparator={true}
                               renderText={(value) => <div>{value}</div>}
                             />
@@ -192,8 +192,8 @@ const TranslateTable = observer(({ controller }) => {
                           <span>_</span>
                           <span>
                             <CurrencyFormat
-                              value={item.data.freelancer.price_to || '_'}
-                              displayType={'text'}
+                              value={item.data.freelancer.price_to || "_"}
+                              displayType={"text"}
                               thousandSeparator={true}
                               renderText={(value) => <div>{value}</div>}
                             />
@@ -203,7 +203,7 @@ const TranslateTable = observer(({ controller }) => {
                       </div>
                     </div>
                   </>
-                )
+                );
               })}
             </div>
           </StateView>
@@ -365,7 +365,7 @@ const TranslateTable = observer(({ controller }) => {
         </div>
       </div>
     </div>
-  )
-})
+  );
+});
 
-export default TranslateTable
+export default TranslateTable;

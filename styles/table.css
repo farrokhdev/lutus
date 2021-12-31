@@ -88,14 +88,7 @@
 }
 .table_content .content_header .ant-form .ant-form-item {
   margin-bottom: 0px !important;
-  /* display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important; */
 }
-/* .table_content .content_header .ant-form .ant-form-item label {
-  color: var(--white) !important;
-  font-weight: 500 !important;
-} */
 
 .table_content .content_column {
   width: 100%;

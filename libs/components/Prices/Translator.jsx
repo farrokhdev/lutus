@@ -1,8 +1,9 @@
-import { Table } from 'antd'
-import React, { Component } from 'react'
-import StateView from '../UI/StateView/StateView'
-import { observer } from 'mobx-react'
-import TranslateTable from '../Tables/TranslateTable/TranslateTable'
+import { Table } from "antd";
+import React, { Component } from "react";
+import StateView from "../UI/StateView/StateView";
+import { observer } from "mobx-react";
+import TranslateTable from "../Tables/TranslateTable/TranslateTable";
+import NewTranslateTable from "../TestTable/NewTranslateTable/NewTranslateTable";
 
 const Translator = observer(({ controller }) => {
   return (
@@ -35,10 +36,10 @@ const Translator = observer(({ controller }) => {
         </span>
       </div>
       <StateView state={controller.stateView}>
-        <TranslateTable controller={controller} />
+        <NewTranslateTable controller={controller} />
       </StateView>
     </div>
-  )
-})
+  );
+});
 
-export default Translator
+export default Translator;
